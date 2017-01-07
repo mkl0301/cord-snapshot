@@ -1,0 +1,6 @@
+mavenrepo:
+    image: "docker-registry:5000/mavenrepo:{{ docker.image_version }}"
+    container_name: mavenrepo
+    ports:
+      - "8080:80"
+    restart: unless-stopped

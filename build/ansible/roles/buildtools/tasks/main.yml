@@ -1,0 +1,12 @@
+- name: Apt Repo
+  apt_repository:
+    repo: ppa:git-core/ppa
+    state: present
+    update_cache: yes
+
+- name: Apt packages
+  apt:
+    name: "{{ item }}"
+  with_items: "{{ apt_packages }}"
+  tags: [buildtools]
+

@@ -1,0 +1,4 @@
+include 'maas'
+include 'platform-install'
+includeFlat 'onos-apps'
+

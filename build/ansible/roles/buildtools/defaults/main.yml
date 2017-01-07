@@ -1,0 +1,3 @@
+apt_packages:
+  - maven
+  - git=1:2.11*

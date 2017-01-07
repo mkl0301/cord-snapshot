@@ -1,0 +1,18 @@
+<jenkins.plugins.slack.SlackNotifier plugin="slack@2.0.1">
+  <teamDomain>opencord</teamDomain>
+  <authToken>kkueX3fmLtcGV6vM4Sp4NVFz</authToken>
+  <buildServerUrl>http://jenkins.opencord.org/</buildServerUrl>
+  <room>notifications</room>
+  <startNotification>false</startNotification>
+  <notifySuccess>true</notifySuccess>
+  <notifyAborted>false</notifyAborted>
+  <notifyNotBuilt>false</notifyNotBuilt>
+  <notifyUnstable>false</notifyUnstable>
+  <notifyFailure>true</notifyFailure>
+  <notifyBackToNormal>false</notifyBackToNormal>
+  <notifyRepeatedFailure>false</notifyRepeatedFailure>
+  <includeTestSummary>false</includeTestSummary>
+  <commitInfoChoice>AUTHORS_AND_TITLES</commitInfoChoice>
+  <includeCustomMessage>true</includeCustomMessage>
+  <customMessage>cord-onos-publisher</customMessage>
+</jenkins.plugins.slack.SlackNotifier>
