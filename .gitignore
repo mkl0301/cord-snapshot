@@ -1,0 +1,39 @@
+.repo
+
+# Java
+*.class
+*.jar
+*.war
+*.oar
+
+# Eclipse
+.project
+.classpath
+.settings
+
+# Idea
+.idea
+*.iml
+*.iws
+*.ipr
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Vagrant
+.vagrant
+
+# Docker registry
+/registry
+
+
+# Gradle
+.gradle
+
+# Ansible
+ansible/*.retry
+
+# Backup files
+*.bak
+
