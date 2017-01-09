@@ -67,10 +67,12 @@ function cloudlab_setup() {
     sudo mkdir -p /mnt/extra
 
     # Sometimes this command fails on the first try
-    sudo /usr/testbed/bin/mkextrafs -r /dev/sdb -qf "/mnt/extra/" || sudo /usr/testbed/bin/mkextrafs -r /dev/sdb -qf "/mnt/extra/"
-
-    # Check that the mount succeeded (sometimes mkextrafs succeeds but device not mounted)
-    mount | grep sdb || (echo "ERROR: mkextrafs failed, exiting!" && exit 1)
+    if ! sudo parted /dev/sda print free | grep myextra ; then
+        sudo parted /dev/sda mkpart myextra ext2 1.73GB 120GB Yes
+        sudo mkfs.ext4 /dev/sda2
+        # Check that the mount succeeded (sometimes mkextrafs succeeds but device not mounted)
+        sudo mount /dev/sda2 /mnt/extra
+    fi
 
     # we'll replace /var/lib/libvirt/images with a symlink below
     [ -d /var/lib/libvirt/images/ ] && [ ! -h /var/lib/libvirt/images ] && sudo rmdir /var/lib/libvirt/images
