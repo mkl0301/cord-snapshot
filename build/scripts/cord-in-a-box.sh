@@ -17,9 +17,9 @@ function cleanup_from_previous_test() {
     sudo su $USER -c 'vagrant destroy'
   fi
 
-  echo "Removing $CORDDIR"
+#  echo "Removing $CORDDIR"
   cd ~
-  rm -rf $CORDDIR
+#  rm -rf $CORDDIR
 }
 
 function bootstrap() {
